@@ -92,7 +92,7 @@ for i in range(quantity_of_table_tops):
         # проход по списку проб mmi
         for k in range(len(MMI_list)):
             # сверяем наличие пробы в сетке
-            if GRID_list[j][i] == noted_list[k]:
+            if GRID_list[j][i] != noted_list[k]:
                 # закрашиваем ячейку нужным цветом
                 sheet1.write(j, i, GRID_list[j][i], white_style)
 
@@ -111,6 +111,6 @@ for i in range(quantity_of_table_tops):
         for k in range(len(POR_list)):
             if GRID_list[j][i] == POR_list[k]:
                 sheet1.write(j, i, GRID_list[j][i], blue_style)
-
+    print(str(quantity_of_table_tops) + '___' + str(i))
 # пишешь каждый раз новое название файла с расширением .xls - в него запишется результат
-book.save('2simple.xls')
+book.save('8simple.xls')
